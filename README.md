@@ -255,13 +255,21 @@ Type: `string`
 
 Default: `"NONE"`
 
+### force\_upgrade\_effective\_until
+
+Description: RFC3339 timestamp for upgrade\_override.effective\_until. Example: 2026-07-20T23:59:59Z
+
+Type: `string`
+
+Default: `null`
+
 ### force\_upgrade\_enabled
 
-Description: Azure default settings
+Description: Azure default settings: When null, the complete block is omitted
 
 Type: `bool`
 
-Default: `false`
+Default: `null`
 
 ### idle\_timeout
 

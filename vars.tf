@@ -381,7 +381,14 @@ variable "default_node_pool_node_soak_duration_in_minutes" {
 }
 
 variable "force_upgrade_enabled" {
-  description = "Azure default settings"
+  description = "Azure default settings: When null, the complete block is omitted"
   type        = bool
-  default     = false
+  nullable    = true
+  default     = null
+}
+
+variable "force_upgrade_effective_until" {
+  description = "RFC3339 timestamp for upgrade_override.effective_until. Example: 2026-07-20T23:59:59Z"
+  type        = string
+  default     = null
 }

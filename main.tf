@@ -41,8 +41,12 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 
   automatic_upgrade_channel = var.automatic_upgrade_channel != "none" ? var.automatic_upgrade_channel : null
 
-  upgrade_override {
-    force_upgrade_enabled = var.force_upgrade_enabled
+  dynamic "upgrade_override" {
+    for_each = var.force_upgrade_enabled == null ? [] : [var.force_upgrade_enabled]
+    content {
+      force_upgrade_enabled = upgrade_override.value
+      effective_until       = var.force_upgrade_effective_until
+    }
   }
 
   dynamic "maintenance_window_auto_upgrade" {
