@@ -255,6 +255,14 @@ Type: `string`
 
 Default: `"NONE"`
 
+### force\_upgrade\_enabled
+
+Description: Azure default settings
+
+Type: `bool`
+
+Default: `false`
+
 ### idle\_timeout
 
 Description: Desired outbound flow idle timeout in minutes for the cluster load balancer. Must be between 4 and 120 inclusive.

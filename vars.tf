@@ -379,3 +379,9 @@ variable "default_node_pool_node_soak_duration_in_minutes" {
   }
   default = 0
 }
+
+variable "force_upgrade_enabled" {
+  description = "Azure default settings"
+  type        = bool
+  default     = false
+}
